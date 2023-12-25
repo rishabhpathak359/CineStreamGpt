@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
-import { auth } from './firebase';
+import { auth } from '../utils/firebase';
 
 const useAuthentication = (signIn) => {
   const signUpUser = async (email, password) => {

@@ -1,7 +1,8 @@
 import React, { useRef, useState } from 'react';
-import { useValidation } from '../utils/useValidation';
-import useAuthentication from '../utils/useAuthentication';
+import { useValidation } from '../hooks/useValidation';
+import useAuthentication from '../hooks/useAuthentication'
 import { useNavigate } from 'react-router-dom';
+import Header from '../components/Header';
 
 const Login = () => {
     
@@ -22,7 +23,6 @@ const Login = () => {
           } else {
             const user = await signInUser(email?.current?.value, password?.current?.value);
             console.log('User signed in:', user);
-            navigate("/main")
           }
         } catch (error) {
           console.error('Error during authentication:', error);
@@ -37,13 +37,7 @@ const Login = () => {
     }
   return (
     <div>
-      <header className='w-full absolute bg-gradient-to-b from-black z-20'>
-        <img
-          src='https://cdn.cookielaw.org/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png'
-          alt='netflix-logo'
-          className='w-1/6 py-5 mx-20 px-4'
-        />
-      </header>
+     <Header/>
       <img
         src='https://assets.nflxext.com/ffe/siteui/vlv3/ca6a7616-0acb-4bc5-be25-c4deef0419a7/c5af601a-6657-4531-8f82-22e629a3795e/IN-en-20231211-popsignuptwoweeks-perspective_alpha_website_large.jpg'
         alt="background"

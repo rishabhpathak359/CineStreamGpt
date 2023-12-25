@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+    scrollbar-width: none; 
+  }
+  
+  body::-webkit-scrollbar {
+    display: none;
+  }
+  .movie-list::-webkit-scrollbar {
+    display: none;
+  }
