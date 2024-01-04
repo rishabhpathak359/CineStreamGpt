@@ -3,15 +3,20 @@ import { useValidation } from '../hooks/useValidation';
 import useAuthentication from '../hooks/useAuthentication'
 import { useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
+import useAuthCheck from '../hooks/useAuthCheck';
 
 const Login = () => {
-    
+    const{signed}=useAuthCheck();
     const[signIn,setsignIn]=useState(true);
     const [errorMessage,seterrorMessage]=useState(null);
     const email=useRef(null);
     const password=useRef(null);
     const navigate=useNavigate();
     const { signUpUser, signInUser } = useAuthentication(signIn);
+    if(signed){
+      navigate("/main")
+    }
+
     const handleValidation=async ()=>{
         const validation=useValidation(email?.current?.value,password?.current?.value);
         seterrorMessage(validation);
