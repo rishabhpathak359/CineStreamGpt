@@ -20,7 +20,7 @@ app.post('/search-movies', async (req, res) => {
     const trimmedInputValue = inputValue.trim();
     const messagePrompt = "Act as a movierecomendation app and give me 10 movie names matching my search, i am also providing an example to you. For example - if my input is Classic retro bollywood funny movies, your output should just be like 1. Golamaal, 2. Golamaal returns, 3. hera pheri, 4. dhamaal etc Note-You should only give me the name no extra messages. Here's my input - ";
 
-    const url = `https://hercai.onrender.com/v3-beta/hercai?question=${messagePrompt}${trimmedInputValue}`;
+    const url = `https://hercai.onrender.com/v3/hercai?question=${messagePrompt}${trimmedInputValue}`;
     const response = await fetch(url);
     const data = await response.json();
 
