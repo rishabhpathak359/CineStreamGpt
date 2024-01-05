@@ -16,7 +16,6 @@ const SecondaryContainer = () => {
   const topRated=movies?.topRated;
   const popular=movies?.popular;
   const nowPlaying=movies?.nowPlaying;
-  console.log("Secondary Container" , movies)
   return movies &&  (
       <div className=' text-white bg-[#141414]'>
         <div className='md:-mt-36 relative pl-4'>

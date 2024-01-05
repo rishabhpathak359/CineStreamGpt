@@ -4,7 +4,6 @@ import { POSTER_CDN, options } from '../utils/constants';
 const MovieCard = ({ movie }) => {
   const [hovered, setHovered] = useState(false);
   const [trailerId, setTrailerId] = useState(null);
-    console.log("Movie" , movie)
   useEffect(() => {
     if (hovered) {
       getHoveredMovieTrailer(movie?.id);
