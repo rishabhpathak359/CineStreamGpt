@@ -10,7 +10,9 @@ app.use(
   })
 );
 app.use(express.json());
-
+app.get("/",(req,res)=>{
+  res.send("Hello")
+})
 app.post('/search-movies', async (req, res) => {
   const { inputValue } = req.body;
 
