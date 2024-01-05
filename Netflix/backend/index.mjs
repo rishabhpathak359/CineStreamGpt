@@ -6,7 +6,7 @@ const app = express();
 app.use(
   cors({
     origin: 'https://netflix-gpt-roan-three.vercel.app', 
-    methods: ['POST', 'GET'],
+    methods: ['POST', 'GET' , 'OPTIONS'],
   })
 );
 app.use(express.json());
