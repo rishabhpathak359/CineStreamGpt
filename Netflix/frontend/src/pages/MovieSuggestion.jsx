@@ -12,7 +12,7 @@ const MovieSuggestion = () => {
         const inputValue = inputRef.current.value;
         if (inputValue) {
             try {
-                const response = await fetch('https://netflix-gpt-mweq.vercel.app/search-movies', {
+                const response = await fetch('https://movie-api-i7pd.onrender.com/search-movies', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
