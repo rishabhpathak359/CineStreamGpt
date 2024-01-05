@@ -46,7 +46,7 @@ app.post('/search-movies', async (req, res) => {
     res.json({ results: allMovies });
   } catch (error) {
     console.error('Error fetching results:', error);
-    res.status(500).json({ error: 'Error fetching results' });
+    res.status(500).json({ error: error.message || 'Error fetching results' });
   }
 });
 
