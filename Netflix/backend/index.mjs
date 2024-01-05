@@ -3,13 +3,13 @@ import fetch from 'node-fetch';
 import cors from 'cors';
 const app = express();
 
-app.use(express.json());
 app.use(
   cors({
     origin: 'https://netflix-gpt-roan-three.vercel.app', 
     methods: ['POST', 'GET'],
   })
 );
+app.use(express.json());
 
 app.post('/search-movies', async (req, res) => {
   const { inputValue } = req.body;
