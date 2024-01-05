@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useValidation } from '../hooks/useValidation';
 import useAuthentication from '../hooks/useAuthentication'
 import { useNavigate } from 'react-router-dom';
@@ -13,9 +13,11 @@ const Login = () => {
     const password=useRef(null);
     const navigate=useNavigate();
     const { signUpUser, signInUser } = useAuthentication(signIn);
-    if(signed){
-      navigate("/main")
-    }
+    useEffect(() => {
+      if (signed) {
+        navigate('/main');
+      }
+    }, [signed, navigate]);
 
     const handleValidation=async ()=>{
         const validation=useValidation(email?.current?.value,password?.current?.value);

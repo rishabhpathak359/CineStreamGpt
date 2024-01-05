@@ -7,7 +7,8 @@ const initialState = {
   nowPlaying:null,
   topRated:null,
   upcoming:null,
-  popular:null
+  popular:null,
+  searchedMovie:null
 };
 
 const movieSlice = createSlice({
@@ -38,7 +39,10 @@ const movieSlice = createSlice({
     },
     addSearchedMovie(state,action){
         state.searchedMovie=action.payload
-    }
+    },
+    default(state) {
+      return state;
+    },
   },
 });
 

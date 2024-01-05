@@ -4,7 +4,7 @@ import { POSTER_CDN, options } from '../utils/constants';
 const MovieCard = ({ movie }) => {
   const [hovered, setHovered] = useState(false);
   const [trailerId, setTrailerId] = useState(null);
-
+    console.log("Movie" , movie)
   useEffect(() => {
     if (hovered) {
       getHoveredMovieTrailer(movie?.id);
@@ -45,7 +45,7 @@ const MovieCard = ({ movie }) => {
       ) : (
         <iframe
           className="w-48 h-64 object-cover rounded-md shadow-md cursor-pointer"
-          src={`https://www.youtube.com/embed/${trailerId}`}
+          src={`https://www.youtube.com/embed/${trailerId}?autoplay=1&mute=1`}
           title="YouTube video player"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
@@ -55,4 +55,4 @@ const MovieCard = ({ movie }) => {
   );
 };
 
-export default MovieCard;
+export default React.memo(MovieCard);

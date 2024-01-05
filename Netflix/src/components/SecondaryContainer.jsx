@@ -19,11 +19,11 @@ const SecondaryContainer = () => {
   console.log("Secondary Container" , movies)
   return movies &&  (
       <div className=' text-white bg-[#141414]'>
-        <div className='-mt-36 relative pl-4'>
-      <MovieList title={"Now Playing Movies"} movies={nowPlaying}/>
-      <MovieList title={"Top Rated Movies"} movies={topRated}/>
-      <MovieList title={"Popular Movies"} movies={popular}/>
-      <MovieList title={"Upcoming Movies"} movies={upcoming}/>
+        <div className='md:-mt-36 relative pl-4'>
+      <MovieList title={"Now Playing Movies"} movies={nowPlaying} infinite={true}/>
+      <MovieList title={"Top Rated Movies"} movies={topRated} infinite={true}/>
+      <MovieList title={"Popular Movies"} movies={popular} infinite={true}/>
+      <MovieList title={"Upcoming Movies"} movies={upcoming} infinite={true}/>
       </div>
     </div>
   )
