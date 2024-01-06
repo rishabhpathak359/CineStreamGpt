@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import {toast} from "react-hot-toast"
 import useAuthCheck from '../hooks/useAuthCheck';
 
 const Header = () => {
@@ -7,7 +8,7 @@ const Header = () => {
 
   return (
     <div>
-      <header className='w-full absolute bg-gradient-to-b from-black z-20 flex justify-between px-4'>
+      <header className='w-full fixed bg-gradient-to-b from-black z-20 flex justify-between px-4'>
         <img
           src='https://cdn.cookielaw.org/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png'
           alt='netflix-logo'
@@ -24,9 +25,9 @@ const Header = () => {
             {dropVisible && (
               <div className="relative inline-block">
                 <div className="absolute right-0 z-20 w-48 py-2 mt-2 origin-top-right bg-gray-800 text-white rounded-md shadow-xl">
-                  <a href="#" className="block px-4 py-3 hover:bg-gray-700" onClick={() => alert("No data available right now")}>Your profile</a>
+                  <a href="#" className="block px-4 py-3 hover:bg-gray-700" onClick={() => toast.error("No data available right now")}>Your profile</a>
                   <Link to="/moviegpt" className="block px-4 py-3 hover:bg-gray-700">Movie suggestions</Link>
-                  <a href="#" className="block px-4 py-3 hover:bg-gray-700" onClick={() => alert("No data available right now")}>Settings</a>
+                  <a href="#" className="block px-4 py-3 hover:bg-gray-700" onClick={() => toast.error("No data available right now")}>Settings</a>
                   <a href="#" onClick={handleSignOut} className="block px-4 py-3 hover:bg-gray-700">Sign Out</a>
                 </div>
               </div>

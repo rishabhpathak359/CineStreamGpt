@@ -29,7 +29,7 @@ const Body = () => {
       <VideoTitle title={title} overview={overview} />
       <VideoContainer id={id} />
       </div>
-      <div className='md:hidden  flex justify-center pt-10'>
+      <div className='md:hidden  flex justify-center pt-28 '>
       <MovieCard movie={randomMovie} />
       </div>
       <SecondaryContainer />
