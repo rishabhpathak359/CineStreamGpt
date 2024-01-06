@@ -25,7 +25,7 @@ const Header = () => {
             {dropVisible && (
               <div className="relative inline-block">
                 <div className="absolute right-0 z-20 w-48 py-2 mt-2 origin-top-right bg-gray-800 text-white rounded-md shadow-xl">
-                  <a href="#" className="block px-4 py-3 hover:bg-gray-700" onClick={() => toast.error("No data available right now")}>Your profile</a>
+                  <Link to="/main" className="block px-4 py-3 hover:bg-gray-700">Home</Link>
                   <Link to="/moviegpt" className="block px-4 py-3 hover:bg-gray-700">Movie suggestions</Link>
                   <a href="#" className="block px-4 py-3 hover:bg-gray-700" onClick={() => toast.error("No data available right now")}>Settings</a>
                   <a href="#" onClick={handleSignOut} className="block px-4 py-3 hover:bg-gray-700">Sign Out</a>
