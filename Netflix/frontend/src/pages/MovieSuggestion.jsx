@@ -1,13 +1,17 @@
 import React, { useRef, useEffect, useState } from 'react';
 import Header from '../components/Header';
 import MovieCard from '../components/MovieCard';
+import Lottie from 'react-lottie-player'
+import search from '../assets/search.json'
 
 const MovieSuggestion = () => {
     const inputRef = useRef(null);
     const[searchedMovie,setSearchedMovie]=useState(null);
+    const [clicked,setClicked] = useState(false);
     console.log("Searched Movies", searchedMovie);
 
     const handleClick = async () => {
+        setClicked(true);
         setSearchedMovie(null);
         const inputValue = inputRef.current.value;
         if (inputValue) {
@@ -46,6 +50,14 @@ const MovieSuggestion = () => {
                     Search
                 </button>
             </div>
+            {
+               clicked && !searchedMovie &&  <Lottie
+                loop
+                animationData={search}
+                play
+                style={{ width: 150, height: 150 }}
+              />
+            }
             <div className='movie-list max-w-screen-lg h-[50vh] mx-auto overflow-y-scroll'>
                 <div className='flex flex-wrap justify-center items-center'>
                     {searchedMovie?.map((movie) => (
