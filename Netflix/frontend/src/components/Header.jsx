@@ -9,11 +9,11 @@ const Header = () => {
   return (
     <div>
       <header className='w-full fixed bg-gradient-to-b from-black z-20 flex justify-between px-4'>
-        <img
-          src='https://cdn.cookielaw.org/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png'
-          alt='netflix-logo'
-          className='w-1/4 md:w-1/6 py-5 md:mx-20'
-        />
+        <a href='/'><div
+          // src='https://cdn.cookielaw.org/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png'
+          // alt='netflix-logo'
+          className='w-1/4 md:w-1/6 py-5 md:mx-20 text-3xl text-red-600 font-serif'
+        >CineStreamGPT</div></a>
         {signed && (
           <div className="flex  flex-col">
             <img

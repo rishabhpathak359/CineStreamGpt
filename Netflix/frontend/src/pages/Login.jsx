@@ -91,7 +91,7 @@ const Login = () => {
   <button className='w-full py-2 bg-[#e50914] mb-4 text-white text-lg rounded mt-12'
   onClick={()=>handleValidation()}
   >{signIn?'Sign In':'Sign Up'}</button>
-  <p className='text-gray-400 text-lg text-center'>{signIn?"New to Netflix?":"Alredy a user?"} 
+  <p className='text-gray-400 text-lg text-center'>{signIn?"New to CineStreamGpt ? ":"Alredy a user?"} 
   <span className='text-white cursor-pointer'
   onClick={()=>handleFormType()}
   >
